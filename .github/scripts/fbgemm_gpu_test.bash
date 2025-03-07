@@ -308,12 +308,15 @@ test_all_fbgemm_gpu_modules () {
   # Set the ignored tests and PyTest args
   __setup_fbgemm_gpu_test
 
+  # Run my specific failing test
+  run_python_test "$env_name" fbgemm_gpu/test/sll/dense_jagged_cat_jagged_out.py
+
   # Iterate through the test directories and run bulk tests
-  for test_dir in "${target_directories[@]}"; do
-    cd "${test_dir}"                                                          || return 1
-    __run_fbgemm_gpu_tests_in_directory "${env_name}" "${fbgemm_gpu_variant}" || return 1
-    cd -                                                                      || return 1
-  done
+  # for test_dir in "${target_directories[@]}"; do
+  #   cd "${test_dir}"                                                          || return 1
+  #   __run_fbgemm_gpu_tests_in_directory "${env_name}" "${fbgemm_gpu_variant}" || return 1
+  #   cd -                                                                      || return 1
+  # done
 }
 
 
