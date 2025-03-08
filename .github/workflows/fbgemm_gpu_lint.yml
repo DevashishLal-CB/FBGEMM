@@ -8,15 +8,15 @@ name: FBGEMM_GPU Lint
 on:
   # PR Trigger
   #
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
 
-  # Push Trigger (enable to catch errors coming out of multiple merges)
-  #
-  pull_request:
-    branches:
-      - main
+  # # Push Trigger (enable to catch errors coming out of multiple merges)
+  # #
+  # pull_request:
+  #   branches:
+  #     - main
 
   # Manual Trigger (for testing only)
   #
